@@ -1,0 +1,30 @@
+services:
+    cb.infrastructure.command_bus:
+        class: CoreBundle\Infrastructure\Bus\Command\CommandBus
+        arguments:
+          - ["@cb.infrastructure.dispatches_events", "@cb.infrastructure.doctrine_translation", "@cb.infrastructure.command_hendler"]
+
+    cb.infrastructure.command_hendler:
+        class: CoreBundle\Infrastructure\Bus\Command\Middleware\CommandHandler
+        arguments: ["@cb.infrastructure.symfony_container", "@cb.infrastructure.inflector_name"]
+
+    cb.infrastructure.dispatches_events:
+        class: CoreBundle\Infrastructure\Bus\Command\Middleware\DispatchesEvents
+        arguments: ["@cb.infrastructure.event_bus", "@cb.infrastructure.event_provider"]
+
+    cb.infrastructure.doctrine_translation:
+        class: CoreBundle\Infrastructure\Bus\Command\Middleware\DoctrineTransaction
+        arguments: ["@doctrine.orm.entity_manager"]
+
+    cb.infrastructure.event_bus:
+        class: CoreBundle\Infrastructure\Bus\Event\EventBus
+
+    cb.infrastructure.event_provider:
+        class: CoreBundle\Infrastructure\Bus\Event\EventProvider
+
+    cb.infrastructure.symfony_container:
+        class: CoreBundle\Infrastructure\Service\Container\Symfony
+        arguments: ["@service_container"]
+
+    cb.infrastructure.inflector_name:
+        class: CoreBundle\Infrastructure\Service\Inflector\Name
