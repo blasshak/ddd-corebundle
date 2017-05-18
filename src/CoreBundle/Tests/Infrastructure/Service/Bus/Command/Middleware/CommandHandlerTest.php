@@ -5,7 +5,7 @@ namespace CoreBundle\Tests\Infrastructure\Service\Bus\Command\Middleware;
 use CoreBundle\Infrastructure\Bus\Command\Middleware\CommandHandler;
 use CoreBundle\Infrastructure\Service\Container\InvalidServiceException;
 use CoreBundle\Infrastructure\Service\Container\Symfony;
-use CoreBundle\Infrastructure\Service\Inflector\Name;
+use CoreBundle\Infrastructure\Service\Inflector\CommandHandlerName;
 use CoreBundle\Tests\Infrastructure\Service\Bus\Command\CounterCommandHandlerStub;
 use CoreBundle\Tests\Infrastructure\Service\Bus\Command\CounterCommandStub;
 use CoreBundle\Tests\Infrastructure\Service\Container\SymfonyStub;
@@ -26,7 +26,7 @@ class CommandHandlerTest extends TestCase
         $containerStub = new SymfonyStub();
         $containerStub->set('counter_command_stub_handlers', new CounterCommandHandlerStub());
         $container = new Symfony($containerStub);
-        $inflector = new Name();
+        $inflector = new CommandHandlerName();
         $commandHandler = new CommandHandler($container, $inflector);
         $num = 1;
         $command = new CounterCommandStub($num);
@@ -41,9 +41,9 @@ class CommandHandlerTest extends TestCase
     public function test_should_executed_successfully()
     {
         $containerStub = new SymfonyStub();
-        $containerStub->set('counter_command_stub_handler', new CounterCommandHandlerStub());
+        $containerStub->set('cb.infrastructure.counter_command_stub_handler', new CounterCommandHandlerStub());
         $container = new Symfony($containerStub);
-        $inflector = new Name();
+        $inflector = new CommandHandlerName();
         $commandHandler = new CommandHandler($container, $inflector);
         $num = 1;
         $command = new CounterCommandStub($num);

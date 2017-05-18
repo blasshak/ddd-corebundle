@@ -6,7 +6,7 @@ services:
 
     cb.infrastructure.command_hendler:
         class: CoreBundle\Infrastructure\Bus\Command\Middleware\CommandHandler
-        arguments: ["@cb.infrastructure.symfony_container", "@cb.infrastructure.inflector_name"]
+        arguments: ["@cb.infrastructure.symfony_container", "@cb.infrastructure.inflector_command_handler_name"]
 
     cb.infrastructure.dispatches_events:
         class: CoreBundle\Infrastructure\Bus\Command\Middleware\DispatchesEvents
@@ -26,5 +26,5 @@ services:
         class: CoreBundle\Infrastructure\Service\Container\Symfony
         arguments: ["@service_container"]
 
-    cb.infrastructure.inflector_name:
-        class: CoreBundle\Infrastructure\Service\Inflector\Name
+    cb.infrastructure.inflector_command_handler_name:
+        class: CoreBundle\Infrastructure\Service\Inflector\CommandHandlerName

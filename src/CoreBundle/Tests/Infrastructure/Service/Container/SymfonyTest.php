@@ -41,7 +41,7 @@ class SymfonyTest extends KernelTestCase
 
     public function test_should_get_service_from_container()
     {
-        $service = $this->container->getService('cb.infrastructure.inflector_name');
+        $service = $this->container->getService('cb.infrastructure.inflector_command_handler_name');
 
         $this->assertInstanceOf(InflectorInterface::class, $service);
     }
