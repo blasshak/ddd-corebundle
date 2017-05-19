@@ -18,12 +18,25 @@ class CommandHandlerName implements InflectorInterface
     public function inflect(CommandInterface $command) : string
     {
         $reflectionClass = (new \ReflectionClass($command));
+        $name = array();
 
-        $firstLevel = $this->getFirstLevel($reflectionClass);
-        $secondLevel = $this->getSecondLevel($reflectionClass);
-        $name = $this->getServiceName($reflectionClass);
+        $this->add($name, $this->getFirstLevel($reflectionClass));
+        $this->add($name, $this->getSecondLevel($reflectionClass));
+        $this->add($name, $this->getServiceName($reflectionClass));
 
-        return $firstLevel.'.'.$secondLevel.'.'.$name;
+        return implode('.', $name);
+    }
+
+    /**
+     * @access private
+     * @param $name
+     * @param $level
+     */
+    private function add(&$name, $level)
+    {
+        if (!empty($level)) {
+            array_push($name, $level);
+        }
     }
 
     /**
