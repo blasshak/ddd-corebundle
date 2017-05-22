@@ -1,6 +1,6 @@
 <?php
 
-namespace CoreBundle\Tests\Infrastructure\Service\Bus\Event;
+namespace CoreBundle\Tests\Infrastructure\Bus\Event;
 
 use CoreBundle\Domain\Bus\Event\EventBusInterface;
 use CoreBundle\Infrastructure\Bus\Event\EventBus;
@@ -10,10 +10,9 @@ use Symfony\Bundle\FrameworkBundle\Tests\TestCase;
  * Class EventBusTest
  * @group core_bundle
  * @group core_bundle_infrastructure
- * @group core_bundle_infrastructure_service
- * @group core_bundle_infrastructure_service_bus
- * @group core_bundle_infrastructure_service_bus_event
- * @package CoreBundle\Tests\Infrastructure\Service\Bus\Event\EventBusTest
+ * @group core_bundle_infrastructure_bus
+ * @group core_bundle_infrastructure_bus_event
+ * @package CoreBundle\Tests\Infrastructure\Bus\Event\EventBusTest
  */
 class EventBusTest extends TestCase
 {

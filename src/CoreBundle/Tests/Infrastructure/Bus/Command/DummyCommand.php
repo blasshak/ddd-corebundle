@@ -1,6 +1,6 @@
 <?php
 
-namespace CoreBundle\Tests\Infrastructure\Service\Bus\Command;
+namespace CoreBundle\Tests\Infrastructure\Bus\Command;
 
 use CoreBundle\Domain\Bus\Command\CommandInterface;
 

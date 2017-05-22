@@ -1,13 +1,13 @@
 <?php
 
-namespace CoreBundle\Tests\Infrastructure\Service\Bus\Command\Middleware;
+namespace CoreBundle\Tests\Infrastructure\Bus\Command\Middleware;
 
 use CoreBundle\Infrastructure\Bus\Command\Middleware\CommandHandler;
 use CoreBundle\Infrastructure\Service\Container\InvalidServiceException;
 use CoreBundle\Infrastructure\Service\Container\Symfony;
 use CoreBundle\Infrastructure\Service\Inflector\CommandHandlerName;
-use CoreBundle\Tests\Infrastructure\Service\Bus\Command\CounterCommandHandlerStub;
-use CoreBundle\Tests\Infrastructure\Service\Bus\Command\CounterCommandStub;
+use CoreBundle\Tests\Infrastructure\Bus\Command\CounterCommandHandlerStub;
+use CoreBundle\Tests\Infrastructure\Bus\Command\CounterCommandStub;
 use CoreBundle\Tests\Infrastructure\Service\Container\SymfonyStub;
 use Symfony\Bundle\FrameworkBundle\Tests\TestCase;
 
@@ -15,9 +15,8 @@ use Symfony\Bundle\FrameworkBundle\Tests\TestCase;
  * Class CommandHandlerTest
  * @group core_bundle
  * @group core_bundle_infrastructure
- * @group core_bundle_infrastructure_services
- * @group core_bundle_infrastructure_services_bus_command_middleware
- * @package CoreBundle\Tests\Infrastructure\Service\Bus\Command\Middleware
+ * @group core_bundle_infrastructure_bus_command_middleware
+ * @package CoreBundle\Tests\Infrastructure\Bus\Command\Middleware
  */
 class CommandHandlerTest extends TestCase
 {

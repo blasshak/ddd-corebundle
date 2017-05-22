@@ -4,7 +4,7 @@ namespace CoreBundle\Tests\Infrastructure\Service\Inflector;
 
 use CoreBundle\Infrastructure\Service\Inflector\InflectorInterface;
 use CoreBundle\Infrastructure\Service\Inflector\CommandHandlerName;
-use CoreBundle\Tests\Infrastructure\Service\Bus\Command\DummyCommand;
+use CoreBundle\Tests\Infrastructure\Bus\Command\DummyCommand;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 /**

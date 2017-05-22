@@ -1,11 +1,13 @@
 <?php
 
-namespace CoreBundle\Tests\Infrastructure\Service\Bus\Command;
+namespace CoreBundle\Tests\Infrastructure\Bus\Command;
 
 use Symfony\Bundle\FrameworkBundle\Tests\TestCase;
 
 /**
  * Class CommandBusTest
+ * @group core_bundle
+ * @group core_bundle_infrastructure
  * @package CoreBundle\Tests\Infrastructure\Bus\Command
  */
 class CommandBusTest extends TestCase

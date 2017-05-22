@@ -1,13 +1,13 @@
 <?php
 
-namespace CoreBundle\Tests\Infrastructure\Service\Bus\Event;
+namespace CoreBundle\Tests\Infrastructure\Bus\Event;
 
 use CoreBundle\Domain\Bus\Event\EventInterface;
 use CoreBundle\Domain\Bus\Event\ListenerInterface;
 
 /**
  * Class ListenerStub
- * @package CoreBundle\Tests\Infrastructure\Service\Bus\Event
+ * @package CoreBundle\Tests\Infrastructure\Bus\Event
  */
 class ListenerStub implements ListenerInterface
 {

@@ -1,12 +1,12 @@
 <?php
 
-namespace CoreBundle\Tests\Infrastructure\Service\Bus\Event;
+namespace CoreBundle\Tests\Infrastructure\Bus\Event;
 
 use CoreBundle\Domain\Bus\Event\EventInterface;
 
 /**
  * Class EventStub
- * @package CoreBundle\Tests\Infrastructure\Service\Bus\Event
+ * @package CoreBundle\Tests\Infrastructure\Bus\Event
  */
 class EventStub implements EventInterface
 {

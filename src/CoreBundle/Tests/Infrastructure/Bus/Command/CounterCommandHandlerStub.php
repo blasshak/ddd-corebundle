@@ -1,13 +1,13 @@
 <?php
 
-namespace CoreBundle\Tests\Infrastructure\Service\Bus\Command;
+namespace CoreBundle\Tests\Infrastructure\Bus\Command;
 
 use CoreBundle\Domain\Bus\Command\CommandHandlerInterface;
 use CoreBundle\Domain\Bus\Command\CommandInterface;
 
 /**
  * Class CounterCommandHandlerStub
- * @package CoreBundle\Tests\Infrastructure\Service\Bus\Command
+ * @package CoreBundle\Tests\Infrastructure\Bus\Command
  */
 class CounterCommandHandlerStub implements CommandHandlerInterface
 {
