@@ -8,6 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Tests\TestCase;
  * Class CommandBusTest
  * @group core_bundle
  * @group core_bundle_infrastructure
+ * @group unit_test
  * @package CoreBundle\Tests\Infrastructure\Bus\Command
  */
 class CommandBusTest extends TestCase

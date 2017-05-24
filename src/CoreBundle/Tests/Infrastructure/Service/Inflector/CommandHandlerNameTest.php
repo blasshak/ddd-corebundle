@@ -13,6 +13,7 @@ use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
  * @group core_bundle_infrastructure
  * @group core_bundle_infrastructure_services
  * @group core_bundle_infrastructure_services_inflector
+ * @group unit_test
  * @package CoreBundle\Tests\Infrastructure\Service\Inflector
  */
 class CommandHandlerNameTest extends KernelTestCase

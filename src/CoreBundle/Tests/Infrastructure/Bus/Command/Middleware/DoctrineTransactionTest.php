@@ -17,6 +17,7 @@ use \Mockery as m;
  * @group core_bundle
  * @group core_bundle_infrastructure
  * @group core_bundle_infrastructure_bus_command_middleware
+ * @group unit_test
  * @package CoreBundle\Tests\Infrastructure\Bus\Command\Middleware
  */
 class DoctrineTransactionTest extends TestCase
@@ -130,15 +131,15 @@ class DoctrineTransactionTest extends TestCase
 
     private function createMiddleware($exception)
     {
-        $middleware = m::mock(MiddlewareInterface::class);
+        $middlewareStub = m::mock(MiddlewareInterface::class);
 
         if ($exception) {
-            $middleware->shouldReceive('execute')->andThrowExceptions(array(new InvalidServiceException()));
+            $middlewareStub->shouldReceive('execute')->andThrowExceptions(array(new InvalidServiceException()));
         } else {
-            $middleware->shouldReceive('execute')->andReturnNull();
+            $middlewareStub->shouldReceive('execute')->andReturnNull();
         }
 
-        return $middleware;
+        return $middlewareStub;
     }
 
     private function createEntityManagerMock(Connection $connection)

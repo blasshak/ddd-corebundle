@@ -12,6 +12,7 @@ use Symfony\Bundle\FrameworkBundle\Tests\TestCase;
  * @group core_bundle_infrastructure
  * @group core_bundle_infrastructure_bus
  * @group core_bundle_infrastructure_bus_event
+ * @group unit_test
  * @package CoreBundle\Tests\Infrastructure\Bus\Event\EventBusTest
  */
 class EventBusTest extends TestCase

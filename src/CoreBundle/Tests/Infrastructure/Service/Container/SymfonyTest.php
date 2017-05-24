@@ -14,6 +14,7 @@ use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
  * @group core_bundle_infrastructure
  * @group core_bundle_infrastructure_services
  * @group core_bundle_infrastructure_services_container
+ * @group unit_test
  * @package CoreBundle\Tests\Infrastructure\Service\Container
  */
 class SymfonyTest extends KernelTestCase

@@ -16,6 +16,7 @@ use Symfony\Bundle\FrameworkBundle\Tests\TestCase;
  * @group core_bundle
  * @group core_bundle_infrastructure
  * @group core_bundle_infrastructure_bus_command_middleware
+ * @group unit_test
  * @package CoreBundle\Tests\Infrastructure\Bus\Command\Middleware
  */
 class CommandHandlerTest extends TestCase

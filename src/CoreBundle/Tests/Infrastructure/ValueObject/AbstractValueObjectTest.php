@@ -10,6 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Tests\TestCase;
  * @group core_bundle
  * @group core_bundle_infrastructure
  * @group core_bundle_infrastructure_value_object
+ * @group unit_test
  * @package CoreBundle\Tests\Infrastructure\ValueObject
  */
 class AbstractValueObjectTest extends TestCase
