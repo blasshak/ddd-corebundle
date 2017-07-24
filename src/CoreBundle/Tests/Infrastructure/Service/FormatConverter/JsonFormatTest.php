@@ -36,4 +36,14 @@ class JsonFormatTest extends KernelTestCase
 
         $this->assertEquals('{"a":"b"}', $newValue);
     }
+
+    public function test_should_convert_string_json_to_array()
+    {
+        $json = '{"a":1}';
+
+        $newValue = $this->formatConverter->convert($json);
+
+        $this->assertCount(1, $newValue);
+        $this->assertEquals($newValue['a'], 1);
+    }
 }
