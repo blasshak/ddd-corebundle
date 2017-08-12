@@ -37,6 +37,15 @@ class Auth implements UserInterface, EncoderAwareInterface
     }
 
     /**
+     * @access public
+     * @return string
+     */
+    public function email(): string
+    {
+        return $this->authUser->email();
+    }
+
+    /**
      * Returns the roles granted to the user.
      *
      * <code>
@@ -67,7 +76,7 @@ class Auth implements UserInterface, EncoderAwareInterface
      */
     public function getPassword()
     {
-        return $this->authUser->password();
+        return null;
     }
 
     /**

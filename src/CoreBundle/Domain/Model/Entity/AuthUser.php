@@ -28,7 +28,7 @@ final class AuthUser
      * @access private
      * @var string
      */
-    private $passwordHash;
+    private $email;
 
     /**
      * @access private
@@ -40,14 +40,14 @@ final class AuthUser
      * AuthUser constructor.
      * @param string $id
      * @param string $username
-     * @param string $encodedPassword
+     * @param string $email
      * @param array $roles
      */
-    public function __construct(string $id, string $username, string $encodedPassword, array $roles = [])
+    public function __construct(string $id, string $username, string $email, array $roles = [])
     {
         $this->id = $id;
         $this->username = $username;
-        $this->passwordHash = (string) $encodedPassword;
+        $this->email = (string) $email;
         $this->roles = array_merge(self::DEFAULT_ROLES, $roles);
     }
 
@@ -73,9 +73,9 @@ final class AuthUser
      * @access public
      * @return string
      */
-    public function password(): string
+    public function email(): string
     {
-        return $this->passwordHash;
+        return $this->email;
     }
 
     /**
