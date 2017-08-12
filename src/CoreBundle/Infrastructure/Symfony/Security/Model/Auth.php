@@ -1,6 +1,6 @@
 <?php
 
-namespace Leos\Infrastructure\SecurityBundle\Security\Model;
+namespace CoreBundle\Infrastructure\Symfony\Security\Model;
 
 use CoreBundle\Domain\Model\Entity\AuthUser;
 use Symfony\Component\Security\Core\User\UserInterface;
