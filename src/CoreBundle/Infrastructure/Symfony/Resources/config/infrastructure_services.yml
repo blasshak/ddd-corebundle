@@ -32,3 +32,7 @@ services:
     cb.infrastructure.jwtoken:
         class: CoreBundle\Infrastructure\Symfony\Security\JWToken
         arguments: ["@lexik_jwt_authentication.jwt_manager"]
+
+    cb.infrastructure.user_storage:
+        class: CoreBundle\Infrastructure\Symfony\Security\UserStorage
+        arguments: ["@security.token_storage"]
