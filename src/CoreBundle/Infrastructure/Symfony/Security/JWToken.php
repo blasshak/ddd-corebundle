@@ -8,7 +8,7 @@ use Lexik\Bundle\JWTAuthenticationBundle\Services\JWTManager;
 
 /**
  * Class JWToken
- * @package Leos\Infrastructure\SecurityBundle\Security
+ * @package CoreBundle\Infrastructure\Symfony\Security
  */
 class JWToken implements TokenInterface
 {

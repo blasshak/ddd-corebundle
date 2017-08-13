@@ -2,7 +2,6 @@
 
 namespace CoreBundle\Tests\Infrastructure\Service\Container;
 
-use CoreBundle\Domain\Model\Entity\AuthUser;
 use CoreBundle\Domain\Security\TokenInterface;
 use CoreBundle\Infrastructure\Symfony\Security\JWToken;
 use Lexik\Bundle\JWTAuthenticationBundle\Services\JWTManager;
@@ -13,8 +12,8 @@ use Mockery as m;
  * Class JWTokenTest
  * @group core_bundle
  * @group core_bundle_infrastructure
- * @group core_bundle_infrastructure_services
- * @group core_bundle_infrastructure_services_container
+ * @group core_bundle_infrastructure_symfony
+ * @group core_bundle_infrastructure_symfony_security
  * @group unit_test
  * @package CoreBundle\Tests\Infrastructure\Service\Container
  */
@@ -42,14 +41,11 @@ class JWTokenTest extends KernelTestCase
         $this->JWToken = new JWToken($JWTManagerStub);
     }
 
-    public function test_create_token()
+    public function test_should_create_token()
     {
-        $token = $this->JWToken->create(new AuthUser(
-            'id',
-            'username',
-            'password',
-            AuthUser::DEFAULT_ROLES
-        ));
+        $userAuth = array('id' => 'id', 'username' => 'id', 'email' => 'email');
+
+        $token = $this->JWToken->create($userAuth);
 
         $this->assertEquals($this->expected, $token);
     }
