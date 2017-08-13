@@ -2,7 +2,6 @@ services:
     cb.application.abstract_application_service:
         class: CoreBundle\Application\Service\AbstractApplicationService
         abstract: true
-        arguments: ['@cb.infrastructure.command_bus', '@cb.infrastructure.event_bus']
         calls:
             - [setCommandBus, ['@cb.infrastructure.command_bus']]
             - [setEventBus, ['@cb.infrastructure.event_bus']]
