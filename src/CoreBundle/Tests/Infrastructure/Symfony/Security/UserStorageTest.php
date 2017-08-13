@@ -30,7 +30,7 @@ class UserStorageTest extends KernelTestCase
     public function test_should_require_valid_token()
     {
         $token = array();
-        $tokenStorage = $this->createTokenStorage($token);
+        $tokenStorage = $this->createTokenStorageStub($token);
         $userStorage = $this->createUserStorage($tokenStorage);
 
         $this->expectException(InvalidTokenException::class);
@@ -40,8 +40,8 @@ class UserStorageTest extends KernelTestCase
     public function test_should_require_valid_user()
     {
         $user = array();
-        $token = $this->createToken($user);
-        $tokenStorage = $this->createTokenStorage($token);
+        $token = $this->createTokenStub($user);
+        $tokenStorage = $this->createTokenStorageStub($token);
         $userStorage = $this->createUserStorage($tokenStorage);
 
         $this->expectException(InvalidAuthUserException::class);
@@ -51,8 +51,8 @@ class UserStorageTest extends KernelTestCase
     public function test_should_create_token()
     {
         $user = new AuthUser('', '', '', array());
-        $token = $this->createToken($user);
-        $tokenStorage = $this->createTokenStorage($token);
+        $token = $this->createTokenStub($user);
+        $tokenStorage = $this->createTokenStorageStub($token);
         $userStorage = $this->createUserStorage($tokenStorage);
 
         $result = $userStorage->get();
@@ -75,7 +75,7 @@ class UserStorageTest extends KernelTestCase
      * @param $token
      * @return m\MockInterface
      */
-    private function createTokenStorage($token)
+    private function createTokenStorageStub($token)
     {
         $tokenStorage = m::mock(TokenStorageInterface::class);
         $tokenStorage->shouldReceive('getToken')->andReturn($token);
@@ -88,7 +88,7 @@ class UserStorageTest extends KernelTestCase
      * @param $user
      * @return m\MockInterface
      */
-    private function createToken($user)
+    private function createTokenStub($user)
     {
         $token = m::mock(TokenInterface::class);
         $token->shouldReceive('getUser')->andReturn($user);
