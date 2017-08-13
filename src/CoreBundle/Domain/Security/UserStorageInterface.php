@@ -8,13 +8,12 @@ use CoreBundle\Domain\Security\Model\Entity\AuthUserInterface;
  * Interface TokenInterface
  * @package CoreBundle\Domain\Security
  */
-interface TokenInterface
+interface UserStorageInterface
 {
 
     /**
      * @access public
-     * @param AuthUserInterface $authUser
-     * @return string
+     * @return AuthUserInterface
      */
-    public function create(AuthUserInterface $authUser): string;
+    public function get();
 }
