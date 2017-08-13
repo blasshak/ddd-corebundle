@@ -2,8 +2,6 @@
 
 namespace CoreBundle\Domain\Security;
 
-use CoreBundle\Domain\Security\Model\Entity\AuthUserInterface;
-
 /**
  * Interface TokenInterface
  * @package CoreBundle\Domain\Security
@@ -13,8 +11,8 @@ interface TokenInterface
 
     /**
      * @access public
-     * @param AuthUserInterface $authUser
+     * @param array $user
      * @return string
      */
-    public function create(AuthUserInterface $authUser): string;
+    public function create(array $user): string;
 }

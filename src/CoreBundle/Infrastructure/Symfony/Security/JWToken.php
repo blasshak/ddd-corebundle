@@ -2,8 +2,8 @@
 
 namespace CoreBundle\Infrastructure\Symfony\Security;
 
-use CoreBundle\Domain\Security\Model\Entity\AuthUserInterface;
 use CoreBundle\Domain\Security\TokenInterface;
+use CoreBundle\Infrastructure\Symfony\Security\Model\Entity\AuthUser;
 use Lexik\Bundle\JWTAuthenticationBundle\Services\JWTManager;
 
 /**
@@ -29,11 +29,12 @@ class JWToken implements TokenInterface
 
     /**
      * @access public
-     * @param AuthUserInterface $authUser
+     * @param array $user
      * @return string
      */
-    public function create(AuthUserInterface $authUser): string
+    public function create(array $user): string
     {
+        $authUser = new AuthUser($user['id'], $user['username'], $user['email'], AuthUser::DEFAULT_ROLES);
         return $this->JWTManager->create($authUser);
     }
 }
