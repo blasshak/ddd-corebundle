@@ -8,6 +8,7 @@ use CoreBundle\Domain\Security\UserStorageInterface;
 use CoreBundle\Infrastructure\Symfony\Security\Exception\InvalidAuthUserException;
 use Lexik\Bundle\JWTAuthenticationBundle\Exception\InvalidTokenException;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
+use Symfony\Component\Security\Guard\Token\GuardTokenInterface;
 
 /**
  * Class UserStorage
@@ -39,7 +40,7 @@ class UserStorage implements UserStorageInterface
     {
         $token = $this->tokenStorage->getToken();
 
-        if (!$token instanceof TokenInterface) {
+        if (!$token instanceof GuardTokenInterface) {
             throw new InvalidTokenException();
         }
 

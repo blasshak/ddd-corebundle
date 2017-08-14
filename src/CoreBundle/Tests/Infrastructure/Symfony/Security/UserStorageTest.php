@@ -2,7 +2,6 @@
 
 namespace CoreBundle\Tests\Infrastructure\Service\Container;
 
-use CoreBundle\Domain\Security\TokenInterface;
 use CoreBundle\Infrastructure\Symfony\Security\Exception\InvalidAuthUserException;
 use CoreBundle\Infrastructure\Symfony\Security\Model\Entity\AuthUser;
 use CoreBundle\Infrastructure\Symfony\Security\UserStorage;
@@ -10,6 +9,7 @@ use Lexik\Bundle\JWTAuthenticationBundle\Exception\InvalidTokenException;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 use Mockery as m;
+use Symfony\Component\Security\Guard\Token\GuardTokenInterface;
 
 /**
  * Class UserStorageTest
@@ -90,7 +90,7 @@ class UserStorageTest extends KernelTestCase
      */
     private function createTokenStub($user)
     {
-        $token = m::mock(TokenInterface::class);
+        $token = m::mock(GuardTokenInterface::class);
         $token->shouldReceive('getUser')->andReturn($user);
 
         return $token;
