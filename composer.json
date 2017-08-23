@@ -19,7 +19,6 @@
             "CoreBundle\\": "tests/CoreBundle"
         }
     },
-    "minimum-stability": "stable",
     "require": {
         "php": ">=7.0",
         "symfony/symfony": "3.2.*",
