@@ -41,13 +41,13 @@ class UserStorage implements UserStorageInterface
         $token = $this->tokenStorage->getToken();
 
         if (!$token instanceof GuardTokenInterface) {
-            throw new InvalidTokenException();
+            throw new InvalidTokenException('Invalid token');
         }
 
         $user = $token->getUser();
 
         if (!$user instanceof AuthUserInterface) {
-            throw new InvalidAuthUserException();
+            throw new InvalidAuthUserException(InvalidAuthUserException::MESSAGE);
         }
 
         return $user;
